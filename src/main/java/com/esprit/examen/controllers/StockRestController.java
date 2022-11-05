@@ -28,6 +28,8 @@ public class StockRestController {
 		List<Stock> list = stockService.retrieveAllStocks();
 		return list;
 	}
+	
+	
 
 	// http://localhost:8089/SpringMVC/stock/retrieve-stock/8
 	@GetMapping("/retrieve-stock/{stock-id}")

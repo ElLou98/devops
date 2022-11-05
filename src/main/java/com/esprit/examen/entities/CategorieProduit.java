@@ -11,8 +11,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
@@ -20,7 +18,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class CategorieProduit implements Serializable {
 
 	/**
@@ -30,16 +27,9 @@ public class CategorieProduit implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idCategorieProduit;
-	@NonNull private String codeCategorie;
-	@NonNull private String libelleCategorie;
+	private String codeCategorie;
+	private String libelleCategorie;
 	@OneToMany(mappedBy = "categorieProduit")
 	@JsonIgnore
 	private Set<Produit> produits;
-	
-	public CategorieProduit (Long idCategorieProduit, String codeCategorie, String libelleCategorie)
-	{
-		this.idCategorieProduit = idCategorieProduit;
-		this.codeCategorie = codeCategorie;
-		this.libelleCategorie = libelleCategorie;
-	}
 }
