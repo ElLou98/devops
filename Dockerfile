@@ -6,7 +6,7 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 #Create MySQL Image for JSP Tutorial Application
 FROM mysql:latest
 
-MAINTAINER baeldung.com
+MAINTAINER mohamedhabib.soula@esprit.tn
 
 RUN chown -R mysql:root /var/lib/mysql/
 
