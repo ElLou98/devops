@@ -152,7 +152,7 @@
 			   </executions>
 			   <configuration>
 			      <serverId>nexus</serverId>
-			      <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+			      <nexusUrl>http://localhost:8081/</nexusUrl>
 			      <skipStaging>true</skipStaging>
 			   </configuration>
 			</plugin>
@@ -162,7 +162,7 @@
 	<distributionManagement>
 	   <snapshotRepository>
 	      <id>maven-snapshots</id>
-	      <url>http://192.168.1.57:8081/repository/maven-snapshots/</url>
+	      <url>http://localhost:8081/repository/maven-snapshots/</url>
 	   </snapshotRepository>
 	</distributionManagement>
 </project>
