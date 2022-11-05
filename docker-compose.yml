@@ -1,0 +1,21 @@
+version: "3"
+services:
+  habeeb:
+    image: habeebsoula / tpachat
+    ports:
+      - "8089:8089"
+    networks:
+      - tpachat
+    depends_on:
+      - mysqldb
+ 
+  mysqldb:
+    image: mysql:8
+    networks:
+      - tpachat
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=bootdb  
+
+networks:
+  employee-mysql: 
