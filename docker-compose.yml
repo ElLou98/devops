@@ -20,4 +20,4 @@ services:
       - MYSQL_DATABASE=bootdb  
 
 networks:
-  employee-mysql: 
+  tpachat: 
