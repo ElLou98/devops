@@ -39,10 +39,18 @@ public class SecteurActivite implements Serializable{
 		
 	}
 	
+	public SecteurActivite(long id, String codeSecteurActivite,String libelleSecteurActivite ) {
+		super();
+		this.idSecteurActivite = id;
+		this.codeSecteurActivite = codeSecteurActivite;
+		this.libelleSecteurActivite = libelleSecteurActivite;
+		
+	}
 	
-	/*public SecteurActivite() {
+	
+	public SecteurActivite() {
 
-	}*/
+	}
 	
 
 	
