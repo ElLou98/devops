@@ -30,9 +30,10 @@ public class StockServiceImpl implements IStockService {
 
 	@Override
 	public Stock addStock(Stock s) {
-		// récuperer la date à l'instant t1
+		
 	
-		return stockRepository.save(s);
+		 stockRepository.save(s);
+		 return s;
 		
 	}
 
@@ -61,7 +62,7 @@ public class StockServiceImpl implements IStockService {
 		return stock;
 	}
 
-	@Override
+	/*@Override
 	public String retrieveStatusStock() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 		Date now = new Date();
@@ -78,6 +79,6 @@ public class StockServiceImpl implements IStockService {
 		}
 		log.info(finalMessage);
 		return finalMessage;
-	}
+	}*/
 
 }

@@ -20,15 +20,11 @@ import com.esprit.examen.repositories.StockRepository;
 
 public class IStockServiceTest extends Tests {
    
-	
+	@Autowired
     StockServiceImpl ss  = new StockServiceImpl();
     
-    @Mock
-    StockRepository sr = Mockito.mock(StockRepository.class);
+
    
-    
-    Stock s2 = new Stock("testtest",10,100);
- 
 	
 	@Test
 	@Order(1)
@@ -52,11 +48,9 @@ public class IStockServiceTest extends Tests {
 	@Order(3)
 	public void testretrieveStock()
 	{
-		/*Stock saveds = ss.retrieveStock(1L);
-		assertEquals(1L,saveds.getIdStock().longValue());*/
-		/*Mockito.when(sr.findById(Mockito.anyLong())).thenReturn(Optional.of(s2));
 		Stock saveds = ss.retrieveStock(1L);
-		assertNotNull(saveds);*/
+		assertEquals(1L,saveds.getIdStock().longValue());
+		
 	}
 	
 	
