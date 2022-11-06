@@ -8,17 +8,16 @@ services:
     volumes:
       - mysql-data:/var/local/mysql/data
     ports:
-      - "3306:3306"
+      - "3307:3307"
     hostname: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=mysql
 
   maven-app:
-    build: ellou98/tpachatlivrable
+    build: .
     image: ellou98/tpachatlivrable
     container_name: ellou98/tpachatlivrable
-    command: livrable.jar
     hostname: maven-app
     tty: true
     depends_on:
