@@ -21,7 +21,7 @@
 	<distributionManagement>
 	   	<repository>
       		<id>maven-releases</id>
-      		<url>http://192.168.1.57:8081/repository/maven-releases/</url>
+      		<url>http://192.168.1.50:8081/repository/maven-releases/</url>
     	</repository>
 	</distributionManagement>
 	
@@ -71,20 +71,19 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.46</version>
+			<scope>runtime</scope>
+        	<version>8.0.26</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			
+			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
-			         <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-		
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -113,6 +112,17 @@
 
 	<build>
 		<plugins>
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-surefire-plugin</artifactId>
+			  <version>2.14.1</version>
+			  <configuration>
+			    <includes>
+			      <include>**/*Test.java</include>
+			    </includes>
+			  </configuration>
+			</plugin>
+
 			<plugin>
 		        <artifactId>maven-deploy-plugin</artifactId>
 		        <configuration>
@@ -147,17 +157,6 @@
 		        </execution>
 		      </executions>
 		    </plugin>
-			<plugin>
-                                 <groupId>org.apache.maven.plugins</groupId>
-                                 <artifactId>maven-resources-plugin</artifactId>
-                                 <version>3.1.0</version>
-                        </plugin> 
-                         
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0-M7</version>
-        </plugin>
 		    <plugin>
 			   <groupId>org.sonatype.plugins</groupId>
 			   <artifactId>nexus-staging-maven-plugin</artifactId>

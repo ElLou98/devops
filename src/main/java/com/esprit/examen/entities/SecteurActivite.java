@@ -8,16 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class SecteurActivite implements Serializable{
 	/**
 	 * 
@@ -39,10 +35,18 @@ public class SecteurActivite implements Serializable{
 		
 	}
 	
+	public SecteurActivite(long id, String codeSecteurActivite,String libelleSecteurActivite ) {
+		super();
+		this.idSecteurActivite = id;
+		this.codeSecteurActivite = codeSecteurActivite;
+		this.libelleSecteurActivite = libelleSecteurActivite;
+		
+	}
 	
-	/*public SecteurActivite() {
+	
+	public SecteurActivite() {
 
-	}*/
+	}
 	
 
 	
