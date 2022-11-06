@@ -8,11 +8,12 @@ services:
     volumes:
       - mysql-data:/var/local/mysql/data
     ports:
-      - "3306:3306"
+      - "3307:3307"
     hostname: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=mysql
+      - MYSQL_TCP_PORT=3307
 
   maven-app:
     build: .
