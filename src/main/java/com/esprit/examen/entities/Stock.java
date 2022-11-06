@@ -36,6 +36,13 @@ public class Stock implements Serializable {
 		this.qte = qte;
 		this.qteMin = qteMin;
 	}
+		public Stock(Long id, String libelleStock, Integer qte, Integer qteMin) {
+		super();
+		this.idStock = id;
+		this.libelleStock = libelleStock;
+		this.qte = qte;
+		this.qteMin = qteMin;
+	}
 	
 	public Stock(Long id, String libelleStock, Integer qte, Integer qteMin) {
 		super();
