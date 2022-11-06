@@ -13,10 +13,11 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=mysql
+      - MYSQL_TCP_PORT: 3307
 
   maven-app:
     build: .
-    image: ellou98/tpachatlivrable
+    image: tpachatlivrableFinal
     container_name: ellou98/tpachatlivrable
     hostname: maven-app
     tty: true
