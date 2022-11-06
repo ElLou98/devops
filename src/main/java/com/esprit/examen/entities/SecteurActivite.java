@@ -16,8 +16,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class SecteurActivite implements Serializable{
 	/**
 	 * 
@@ -39,18 +39,18 @@ public class SecteurActivite implements Serializable{
 		
 	}
 	
-	/*public SecteurActivite(long id, String codeSecteurActivite,String libelleSecteurActivite ) {
+	public SecteurActivite(long id, String codeSecteurActivite,String libelleSecteurActivite ) {
 		super();
 		this.idSecteurActivite = id;
 		this.codeSecteurActivite = codeSecteurActivite;
 		this.libelleSecteurActivite = libelleSecteurActivite;
 		
-	}*/
+	}
 	
 	
-	/*public SecteurActivite() {
+	public SecteurActivite() {
 
-	}*/
+	}
 	
 
 	
