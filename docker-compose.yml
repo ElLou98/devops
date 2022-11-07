@@ -11,7 +11,7 @@ services:
       - mysql-data:/var/local/mysql/data
     ports:
       - "3307:3306"
-    hostname: mysqlv2
+    hostname: mysqlv
     environment:
       - MYSQL_DATABASE=tpachato
       - MYSQL_ROOT_PASSWORD=A*123456789*a
