@@ -6,7 +6,7 @@ services:
     networks:
       - maven-mysql-network
     restart: always
-    container_name: mysqlv2
+    container_name: mysqlv3
     volumes:
       - mysql-data:/var/local/mysql/data
     ports:
