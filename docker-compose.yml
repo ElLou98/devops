@@ -8,7 +8,7 @@ services:
     volumes:
       - mysql-data:/var/local/mysql/data
     ports:
-      - "3306:3306"
+      - "3307:3307"
     hostname: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=Habib123456789!
@@ -19,7 +19,7 @@ services:
     build: .
     restart: on-failure
     image: habeebsoula/tpachat
-    container_name: tpachatlivrableFinal
+    container_name: tpachatlivrableF
     hostname: maven-app
     tty: true
     depends_on:
