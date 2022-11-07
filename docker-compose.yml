@@ -15,10 +15,10 @@ services:
       - MYSQL_DATABASE=mysql
 
   maven-app:
-    build: sample-maven-app
-    image: sample-maven-app
-    container_name: sample-maven-app
-    hostname: maven-app
+    build: .
+    image: bilelbellili/tpachat
+    container_name: tpachat
+    hostname: tpachat
     tty: true
     depends_on:
       - mysql
