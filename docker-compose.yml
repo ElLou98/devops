@@ -17,7 +17,6 @@ services:
 
   maven-app:
     build: .
-    restart: on-failure
     image: habeebsoula/tpachat
     container_name: tpachatlivrableF
     hostname: maven-app
