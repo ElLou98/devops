@@ -1,6 +1,5 @@
-version: "3"
+version: '3'
 services:
-
   mysql:
     image: mysql:8.0
     container_name: mysql
@@ -8,7 +7,7 @@ services:
     volumes:
       - mysql-data:/var/local/mysql/data
     ports:
-      - "3306:3306"
+      - '3306:3306'
     hostname: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
@@ -23,6 +22,17 @@ services:
     tty: true
     depends_on:
       - mysql
+
+  sonarqube:
+    image: sonarqube:8.9.7-community
+    ports:
+      - '9000:9000'
+      - '9092:9092'
+
+  nexus:
+    image: sonatype/nexus3
+    ports:
+      - '8081:8081'
 
 volumes:
   mysql-data:
