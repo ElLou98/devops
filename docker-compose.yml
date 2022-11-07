@@ -1,8 +1,11 @@
 version: "3"
 services:
 
-  mysql:
+  mysql-service:
     image: mysql:8.0
+    networks:
+      - maven-mysql-network
+    restart: always
     container_name: mysql
     command: mysqld --default-authentication-plugin=mysql_native_password
     volumes:
@@ -20,8 +23,14 @@ services:
     container_name: tpachat
     hostname: tpachat
     tty: true
+    networks:
+      - maven-mysql-network
     depends_on:
-      - mysql
+      - mysql-service
+
+networks:
+  maven-mysql-network:
+    driver: bridge
 
 volumes:
   mysql-data:
