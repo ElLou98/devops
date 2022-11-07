@@ -6,7 +6,7 @@ services:
     networks:
       - maven-mysql-network
     restart: always
-    container_name: mysql
+    container_name: mysqlv2
     command: mysqld --default-authentication-plugin=mysql_native_password
     volumes:
       - mysql-data:/var/local/mysql/data
@@ -14,8 +14,8 @@ services:
       - "3307:3306"
     hostname: mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=A*123456789*a
-      - MYSQL_DATABASE=mysql
+      - MYSQLDB_ROOT_PASSWORD=A*123456789*a
+      - MYSQLDB_DATABASE=tpachato
 
   maven-app:
     build: .
