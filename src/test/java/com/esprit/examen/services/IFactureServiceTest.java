@@ -35,8 +35,6 @@ public class IFactureServiceTest extends Tests {
 	{
 		List<Facture> allFactures = fs.retrieveAllFactures();
 		int expected = allFactures.size();
-		Facture f = new Facture();
-		Facture stdb = fs.addFacture(f);
 		assertEquals(expected, allFactures.size());
 		
 	}
@@ -44,10 +42,10 @@ public class IFactureServiceTest extends Tests {
 	@Test
 	public void testaddFacture() throws ParseException
 	{
-		Facture ft = new Facture();
+		Facture ft = new Facture(10, 2000);
 		Facture ftdb = fs.addFacture(ft);
+		assertEquals(ft.getIdFacture(),ftdb.getIdFacture());
 		
-	
 	}
 	
 
