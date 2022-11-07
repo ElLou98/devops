@@ -14,9 +14,9 @@ services:
       - MYSQL_DATABASE=mysql
 
   maven-app:
-    build: ellou98/tpachatlivrable
-    image: ellou98/tpachatlivrable
-    container_name: ellou98/tpachatlivrable
+    build: aoeneko98/tpachatlivrable
+    image: aoeneko98/tpachatlivrable
+    container_name: aoeneko98/tpachatlivrable
     command: livrable.jar
     hostname: maven-app
     tty: true
