@@ -6,7 +6,8 @@ services:
     networks:
       - bored-network
     environment:
-      - MYSQL_ROOT_USER=root
+      - MYSQL_USER=boredPeople
+      - MYSQL_PASSWORD=soBoredPass
       - MYSQL_DATABASE=tpachato
       - MYSQL_ROOT_PASSWORD=Habib123456789!
     volumes:
@@ -28,8 +29,8 @@ services:
       - bored-db
     environment:
       - MYSQL_HOST=bored-db
-      - MYSQL_USERNAME=root
-      - MYSQL_PASSWORD=Habib123456789!
+      - MYSQL_USERNAME=boredPeople
+      - MYSQL_PASSWORD=soBoredPass
       - MYSQL_DATABASE=tpachato
       - MYSQL_PORT=3307
 
