@@ -32,7 +32,7 @@ public class IFactureImplTest {
 		Facture fac = FactureService.addFacture(f) ;
 		System.out.print("Facture "+fac);
 		assertNotNull(fac.getIdFacture());
-		assertNotNull(fac.getMontantFacture()());
+		assertNotNull(fac.getMontantFacture());
 		assertTrue(fac.getMontantRemise() < fac.getMontantFacture());
 		
 	}
