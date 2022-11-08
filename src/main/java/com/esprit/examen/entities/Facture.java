@@ -15,6 +15,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
@@ -22,14 +24,15 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 public class Facture implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idFacture;
-	private float montantRemise;
-	private float montantFacture;
+	@NonNull private Long idFacture;
+	@NonNull private float montantRemise;
+	@NonNull private float montantFacture;
 	@Temporal(TemporalType.DATE)
 	private Date dateCreationFacture;
 	@Temporal(TemporalType.DATE)
@@ -43,18 +46,33 @@ public class Facture implements Serializable {
     @OneToMany(mappedBy="facture")
     @JsonIgnore
     private Set<Reglement> reglements;
+	public Facture( @NonNull float montantRemise, @NonNull float montantFacture) {
+		super();
+	
+		this.montantRemise = montantRemise;
+		this.montantFacture = montantFacture;
+	}
 	public Long getIdFacture() {
 		return idFacture;
 	}
 	public void setIdFacture(Long idFacture) {
 		this.idFacture = idFacture;
 	}
-	public Facture(float montantRemise, float montantFacture) {
-		super();
-		this.montantRemise = montantRemise;
-		this.montantFacture = montantFacture;
-		
+	public float getMontantRemise() {
+		return montantRemise;
 	}
+	public void setMontantRemise(float montantRemise) {
+		this.montantRemise = montantRemise;
+	}
+	public float getMontantFacture() {
+		return montantFacture;
+	}
+	public void setMontantFacture(float montantFacture) {
+		this.montantFacture = montantFacture;
+	}
+	
+	
+
 
 	
 }
