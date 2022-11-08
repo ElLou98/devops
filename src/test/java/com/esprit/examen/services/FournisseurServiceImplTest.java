@@ -87,31 +87,4 @@ public class FournisseurServiceImplTest {
 		verify(fournisseurRepository, times(1)).findAll();
 
 	}
-	/*
-	@Test
-	public void testDeleteClient() throws ParseException {
-		Fournisseur tempF = new Fournisseur("F003","Autres");
-		fournisseurService.addFournisseur(tempF);
-		fournisseurService.deleteFournisseur(tempF.getIdFournisseur());
-		verify(fournisseurRepository, times(1)).delete(tempF);
-	}
-
-	
-	
-	@Test
-	public void testUpdateCategorieProduit() throws ParseException
-	{
-		CategorieProduit c = new CategorieProduit("C001", "Alimentaire");
-		CategorieProduit categorie = categorieProduitService.addCategorieProduit(c);
-		CategorieProduit c1 = new CategorieProduit(categorie.getIdCategorieProduit(),"C002", "Alimentaire");
-		CategorieProduit categorie1 = categorieProduitService.updateCategorieProduit(c1);
-		assertEquals(categorie.getIdCategorieProduit(),categorie1.getIdCategorieProduit());
-		assertNotEquals(categorie1.getCodeCategorie(), categorie.getCodeCategorie());
-		categorieProduitService.deleteCategorieProduit(categorie.getIdCategorieProduit());
-		categorieProduitService.deleteCategorieProduit(categorie1.getIdCategorieProduit());
-	}
-	
-	*/
-	
-
 }

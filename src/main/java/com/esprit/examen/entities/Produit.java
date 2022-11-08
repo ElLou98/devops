@@ -12,16 +12,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 public class Produit implements Serializable {
 
 	/**
@@ -31,12 +29,12 @@ public class Produit implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idProduit;
-	private String codeProduit;
-	private String libelleProduit;
-	private float prix;
-	@Temporal(TemporalType.DATE)
+	@NonNull private String codeProduit;
+	@NonNull private String libelleProduit;
+	@NonNull private float prix;
+	@NonNull @Temporal(TemporalType.DATE)
 	private Date dateCreation;
-	@Temporal(TemporalType.DATE)
+	@NonNull @Temporal(TemporalType.DATE)
 	private Date dateDerniereModification;
 	@ManyToOne
 	@JsonIgnore
