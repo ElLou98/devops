@@ -14,16 +14,16 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
-@Builder
 public class Fournisseur implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -31,8 +31,8 @@ public class Fournisseur implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idFournisseur;
-	@NonNull private String code;
-	@NonNull private String libelle;
+	private String code;
+	private String libelle;
 	@Enumerated(EnumType.STRING)
 	private CategorieFournisseur  categorieFournisseur;
 	@OneToMany(mappedBy="fournisseur")
